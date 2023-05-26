@@ -1,0 +1,28 @@
+//Insertion sorting
+#include <stdio.h>
+int main()
+{
+    int n,i;
+	int arr[20];
+    printf("How many values?");
+    scanf("%d", &n);
+    printf("\nEnter the values:");
+    for(i=0;i<n;i++)
+        scanf("%d",&arr[i]);
+    printf("\nOriginal array:\t");
+    for(i=0;i<n;i++)
+        printf("%d\t",arr[i]);
+	for (i=0;i<n;i++)
+	{
+		int j=i, temp=arr[i];
+		while(j > 0 && temp < arr[j-1])
+		{
+			arr[j] = arr[j-1];
+			j--;
+		}
+		arr[j] = temp;
+	}
+	printf("\nSorted array:\t");
+    for(i=0;i<n;i++)
+        printf("%d\t",arr[i]);
+}
